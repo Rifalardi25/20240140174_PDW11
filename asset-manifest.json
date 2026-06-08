@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/20240140174_PDW11/static/css/main.bac2ceb4.css",
+    "main.js": "/20240140174_PDW11/static/js/main.d8328901.js",
+    "static/media/mcfc.png": "/20240140174_PDW11/static/media/mcfc.a8ca3cb59b48ffa02b34.png",
+    "index.html": "/20240140174_PDW11/index.html",
+    "main.bac2ceb4.css.map": "/20240140174_PDW11/static/css/main.bac2ceb4.css.map",
+    "main.d8328901.js.map": "/20240140174_PDW11/static/js/main.d8328901.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bac2ceb4.css",
+    "static/js/main.d8328901.js"
+  ]
+}

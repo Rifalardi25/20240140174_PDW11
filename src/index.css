@@ -1,13 +1,214 @@
-body {
+/* Mengatur ulang gaya dasar */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #001838; /* Warna Biru Navy Gelap */
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* =========================================
+   DESAIN HEADER DENGAN LOGO ASLI
+   ========================================= */
+.team-header {
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 15px rgba(108, 171, 221, 0.4));
+  transition: transform 0.3s ease;
+}
+
+.team-logo:hover {
+  transform: scale(1.05);
+}
+
+.team-header h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.team-header p {
+  color: #6CABDD; /* Sky Blue Man City */
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   LAYOUT FORMASI LAPANGAN (PITCH)
+   ========================================= */
+.football-pitch {
+  background: linear-gradient(180deg, #00224D 0%, #001122 100%);
+  border: 2px solid #003366;
+  border-radius: 20px;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px; /* Jarak antar baris pemain (Penyerang -> Gelandang -> dst) */
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Garis Lapangan Buatan (Hiasan Garis Tengah) */
+.football-pitch::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Lingkaran Tengah Lapangan */
+.football-pitch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+/* Wadah per Baris Formasi */
+.formation-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  z-index: 1; /* Agar kartu berada di atas gambar garis lapangan */
+}
+
+/* =========================================
+   DESAIN KARTU PEMAIN (PLAYER CARD)
+   ========================================= */
+.player-card {
+  width: 240px; /* Lebar sedikit dikecilkan agar 4 kartu (bek) muat sebaris */
+  background: linear-gradient(135deg, rgba(0, 34, 77, 0.9) 0%, rgba(0, 17, 34, 0.9) 100%);
+  border: 1px solid #003366;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.player-card:hover {
+  transform: translateY(-8px);
+  border-color: #6CABDD;
+  box-shadow: 0 10px 25px rgba(108, 171, 221, 0.2);
+}
+
+.player-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #6CABDD;
+}
+
+/* =========================================
+   HEADER KARTU (NOMOR & POSISI)
+   ========================================= */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px 20px 0;
+}
+
+.player-number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.15);
+  line-height: 0.8;
+  font-style: italic;
+}
+
+.player-position-badge {
+  background-color: #6CABDD;
+  color: #001838;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   INFORMASI TEKS PEMAIN
+   ========================================= */
+.player-info {
+  padding: 20px;
+  margin-top: auto;
+}
+
+.player-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.player-position {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6CABDD;
+  margin-bottom: 12px;
+}
+
+.player-nation {
+  font-size: 0.8rem;
+  color: #b0c4de;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
+}
+
+/* =========================================
+   RESPONSIVITAS (UNTUK HP & TABLET)
+   ========================================= */
+@media (max-width: 768px) {
+  .player-card {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .football-pitch {
+    padding: 30px 10px;
+    gap: 30px;
+  }
 }
